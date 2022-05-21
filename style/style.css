@@ -1,1 +1,152 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #e0e0e0;
+}
+
+@media only screen and (max-width: 1000px) {
+  .sideBarContainer {
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.288);
+  }
+}
+
+.sideBarContainer #sideBar {
+  margin-right: 15px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 5%;
+  position: 2;
+}
+
+@media only screen and (max-width: 1000px) {
+  .sideBarContainer #sideBar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
+
+.sideBarContainer #sideBar form div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.sideBarContainer #sideBar form div input {
+  margin-left: 10px;
+}
+
+.sideBarContainer #sideBar form .noteAria {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.sideBarContainer #sideBar form * {
+  margin-top: 5px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .hide {
+    display: none;
+  }
+}
+
+#toDoList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#toDoList div {
+  width: 33%;
+}
+
+@media only screen and (max-width: 1200px) {
+  #toDoList div {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #toDoList div {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 5px;
+    margin-bottom: 0;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #toDoList div {
+    width: 100%;
+  }
+}
+
+#toDoList div .card {
+  height: 350px !important;
+  width: 98%;
+  margin-top: 5px;
+}
+
+#toDoList div .card p {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  overflow-x: scroll;
+  overflow-x: hidden;
+}
+
+#toDoList div .card label {
+  color: blue;
+}
+
+#toDoList div .card hr {
+  margin-top: 5px;
+}
+
+#toDoList div .card .controlls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+#addTaskBtn {
+  display: none;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+/*# sourceMappingURL=style.css.map */
