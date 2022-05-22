@@ -3,8 +3,13 @@ fetchLocalStorage();
 $(document).ready(() => {
     let sideBarPopUp = $(".sideBarContainer");
     sideBarPopUp.hide();
+
     $("#addTaskBtn").click(() => {
         sideBarPopUp.show();
+    });
+
+    $("#popUpExit").click(() => {
+        $(".sideBarContainer").hide();
     });
 
     $("#saveTaskBtnSm").click(() => {
@@ -13,7 +18,6 @@ $(document).ready(() => {
         let date = $("#dateInputSm");
         let note = $("#noteInputSm");
         getInput(sub, time, date, note);
-        $(".sideBarContainer").hide();
     });
     $("#saveTaskBtnLg").click(() => {
         let sub = $("#subjectInputLg");
@@ -54,6 +58,7 @@ function getInput(sub, time, date, note) {
         time.val("");
         date.val("");
         note.val("");
+
     } else {
         if (!subValid) sub.addClass("invalidInput");
         if (!timeValid && dateValid) time.addClass("invalidInput");
