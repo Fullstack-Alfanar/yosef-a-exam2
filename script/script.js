@@ -1,49 +1,66 @@
 let taskList = [];
 fetchLocalStorage();
 $(document).ready(() => {
-    $("#saveTaskBtn").click(() => {
-        let sub = $("#subjectInput");
-        let time = $("#timeInput");
-        let date = $("#dateInput");
-        let note = $("#noteInput");
+    let sideBarPopUp = $(".sideBarContainer");
+    sideBarPopUp.hide();
+    $("#addTaskBtn").click(() => {
+        sideBarPopUp.show();
+    });
 
-        sub.removeClass("invalidInput");
-        time.removeClass("invalidInput");
-        date.removeClass("invalidInput");
-        note.removeClass("invalidInput");
-
-        let subValid = sub.val() != "" && sub.val() != null ? true : false;
-        let dateValid = validateDate(date.val(), time.val());
-        let timeValid = validateTime(time.val());
-        let noteValid = note.val() != "" && note.val() != null ? true : false;
-
-
-        if (dateValid && subValid && noteValid) {
-            let now = new Date();
-            task = {
-                "sub": sub.val(),
-                "time": time.val(),
-                "date": date.val(),
-                "note": note.val(),
-                "createTime": `${now.getHours()}:${now.getMinutes()} ${now.getFullYear()}/${now.getMonth() + 1}/${now.getDate()}`
-            }
-
-            taskList.push(task);
-            saveToLocalStorage();
-            addTaskToList(task);
-
-            sub.val("");
-            time.val("");
-            date.val("");
-            note.val("");
-        } else {
-            if (!subValid) sub.addClass("invalidInput");
-            if (!timeValid && dateValid) time.addClass("invalidInput");
-            if (!dateValid) date.addClass("invalidInput");
-            if (!noteValid) note.addClass("invalidInput");
-        }
+    $("#saveTaskBtnSm").click(() => {
+        let sub = $("#subjectInputSm");
+        let time = $("#timeInputSm");
+        let date = $("#dateInputSm");
+        let note = $("#noteInputSm");
+        getInput(sub, time, date, note);
+        $(".sideBarContainer").hide();
+    });
+    $("#saveTaskBtnLg").click(() => {
+        let sub = $("#subjectInputLg");
+        let time = $("#timeInputLg");
+        let date = $("#dateInputLg");
+        let note = $("#noteInputLg");
+        getInput(sub, time, date, note);
     });
 });
+
+function getInput(sub, time, date, note) {
+    sub.removeClass("invalidInput");
+    time.removeClass("invalidInput");
+    date.removeClass("invalidInput");
+    note.removeClass("invalidInput");
+
+    let subValid = sub.val() != "" && sub.val() != null ? true : false;
+    let dateValid = validateDate(date.val(), time.val());
+    let timeValid = validateTime(time.val());
+    let noteValid = note.val() != "" && note.val() != null ? true : false;
+
+
+    if (dateValid && subValid && noteValid) {
+        let now = new Date();
+        task = {
+            "sub": sub.val(),
+            "time": time.val(),
+            "date": date.val(),
+            "note": note.val(),
+            "createTime": `${now.getHours()}:${now.getMinutes()} ${now.getFullYear()}/${now.getMonth() + 1}/${now.getDate()}`
+        }
+
+        taskList.push(task);
+        saveToLocalStorage();
+        addTaskToList(task);
+
+        // sub.val("");
+        // time.val("");
+        // date.val("");
+        // note.val("");
+    } else {
+        if (!subValid) sub.addClass("invalidInput");
+        if (!timeValid && dateValid) time.addClass("invalidInput");
+        if (!dateValid) date.addClass("invalidInput");
+        if (!noteValid) note.addClass("invalidInput");
+    }
+}
 
 function validateDate(date, time) {
     let year = date.split("-")[0];

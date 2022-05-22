@@ -13,7 +13,36 @@
 </head>
 
 <body>
-
+    <div class="sideBarContainer">
+        <div id="sideBar">
+            <div class="card">
+                <div class="card-body">
+                    <form onsubmit="return false;">
+                        <h5 class="card-title">Add a new Task</h5>
+                        <div>
+                            <label>Subject</label>
+                            <input type="text" id="subjectInputSm">
+                        </div>
+                        <div>
+                            <label>Time</label>
+                            <input type="time" id="timeInputSm">
+                        </div>
+                        <div>
+                            <label>Date</label>
+                            <input type="date" id="dateInputSm">
+                        </div>
+                        <div class="noteAria">
+                            <label>Note</label>
+                            <textarea id="noteInputSm" cols="20" rows="5"></textarea>
+                        </div>
+                        <div class="addButtonAria">
+                            <input id="saveTaskBtnSm" class="btn btn-primary" value="Add task" type="submit">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <header>
         <div class="px-3 py-2 bg-dark text-white">
             <div class="container">
@@ -26,7 +55,7 @@
     </header>
 
     <main class="container">
-        <div class="sideBarContainer hide">
+        <div class="hide">
             <div id="sideBar">
                 <div class="card">
                     <div class="card-body">
@@ -34,23 +63,23 @@
                             <h5 class="card-title">Add a new Task</h5>
                             <div>
                                 <label>Subject</label>
-                                <input type="text" id="subjectInput">
+                                <input type="text" id="subjectInputLg">
                             </div>
                             <div>
                                 <label>Time</label>
-                                <input type="time" id="timeInput">
+                                <input type="time" id="timeInputLg">
                             </div>
                             <div>
                                 <label>Date</label>
-                                <input type="date" id="dateInput">
+                                <input type="date" id="dateInputLg">
                             </div>
                             <div class="noteAria">
                                 <label>Note</label>
-                                <textarea id="noteInput" cols="20" rows="5"></textarea>
+                                <textarea id="noteInputLg" cols="20" rows="5"></textarea>
                             </div>
                             <div class="addButtonAria">
                                 <input class="btn btn-reset" type="reset" value="Reset">
-                                <input id="saveTaskBtn" class="btn btn-primary" value="Add task" type="submit">
+                                <input id="saveTaskBtnLg" class="btn btn-primary" value="Add task" type="submit">
                             </div>
                         </form>
                     </div>
