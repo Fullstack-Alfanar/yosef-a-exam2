@@ -8,6 +8,9 @@ the program utilizes a resizable style to set a useful interface for large and s
 
 ## Usage
 
+### To View the website
+please go to this [Link](https://fullstack-alfanar.github.io/yosef-a-exam2/)
+
 ### Add a new task
 
 simply insert the data you want and then press Add Task.<br>
