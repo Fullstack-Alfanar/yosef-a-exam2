@@ -50,10 +50,10 @@ function getInput(sub, time, date, note) {
         saveToLocalStorage();
         addTaskToList(task);
 
-        // sub.val("");
-        // time.val("");
-        // date.val("");
-        // note.val("");
+        sub.val("");
+        time.val("");
+        date.val("");
+        note.val("");
     } else {
         if (!subValid) sub.addClass("invalidInput");
         if (!timeValid && dateValid) time.addClass("invalidInput");
